@@ -1,0 +1,378 @@
+/* ===================================================== */
+/* PAMELA SORIA CASTRO - Comercio Internacional          */
+/* Fan de Rauw Alejandro, Michael Jackson, motos BMW     */
+/* S1000RR y Kawasaki Ninja ZX6R, y autos Porsche/Ferrari*/
+/* ===================================================== */
+
+/* ===================================================== */
+/* ESTILOS GENERALES DE LA PÁGINA                        */
+/* ===================================================== */
+
+/*
+Chicos, aquí estamos aplicando un color de fondo
+a toda la página y también definimos la fuente
+que vamos a utilizar.
+*/
+
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+
+/*
+Chicos, esta parte nos ayuda a dar espacio
+al contenido principal de la página.
+
+margin-top agrega espacio arriba.
+margin-bottom agrega espacio abajo.
+*/
+
+.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+/*
+Aquí modificamos el texto de presentación.
+
+color cambia el color del texto.
+font-size cambia el tamaño de la letra.
+*/
+
+.presentacion {
+    color: darkblue;
+    font-size: 20px;
+}
+
+
+/* ===================================================== */
+/* LOGO PRINCIPAL                                        */
+/* ===================================================== */
+
+/*
+Chicos, esta clase la vamos a utilizar
+para controlar el tamaño de nuestro logo.
+
+width define el ancho de la imagen.
+
+transition permite que los cambios
+que hagamos con hover se vean suaves
+y no ocurran de golpe.
+*/
+
+.logo-principal {
+    width: 120px;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/*
+:hover se activa cuando pasamos
+el mouse sobre un elemento.
+
+En este caso nuestro logo aumenta
+ligeramente de tamaño.
+
+scale(1) sería el tamaño original.
+scale(1.15) aumenta un poco el tamaño.
+
+Chicos, ustedes pueden cambiar este valor
+para experimentar con diferentes tamaños.
+*/
+
+.logo-principal:hover {
+    transform: scale(1.15);
+
+    /*
+    filter nos permite modificar
+    visualmente una imagen.
+
+    brightness aumenta el brillo.
+    saturate aumenta la intensidad
+    de los colores.
+
+    También pueden modificar estos valores
+    para personalizar su logo.
+    */
+
+    filter:
+        brightness(1.15)
+        saturate(1.5);
+}
+
+
+/* ===================================================== */
+/* EFECTO HOVER EN LAS TARJETAS                          */
+/* ===================================================== */
+
+/*
+Chicos, aquí estamos preparando
+todas nuestras tarjetas para que
+puedan tener movimiento.
+
+transition hace que el movimiento
+y el cambio de color sean suaves.
+*/
+
+.card {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/*
+Cuando pasemos el mouse sobre una tarjeta
+vamos a moverla ligeramente hacia arriba.
+
+translateY mueve un elemento verticalmente.
+
+Un número negativo hace que suba.
+
+También vamos a cambiar ligeramente
+el color de fondo.
+*/
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: lightyellow;
+}
+
+
+/*
+Chicos, pueden probar otros valores.
+
+Por ejemplo:
+
+transform: translateY(-10px);
+
+Esto hará que la tarjeta suba más.
+
+También pueden utilizar:
+
+transform: scale(1.03);
+
+Esto hará que la tarjeta crezca
+ligeramente al pasar el mouse.
+*/
+
+
+/* ===================================================== */
+/* BOTONES FLOTANTES DE REDES SOCIALES                   */
+/* ===================================================== */
+
+/*
+Este contenedor agrupa los botones
+de nuestras redes sociales.
+
+position: fixed permite que los botones
+permanezcan visibles aunque bajemos
+por la página.
+
+right indica qué tan separados estarán
+del lado derecho.
+
+bottom indica qué tan separados estarán
+de la parte inferior.
+*/
+
+.redes-flotantes {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    /*
+    Activamos Flexbox.
+
+    column organiza los botones
+    uno debajo de otro.
+    */
+
+    display: flex;
+    flex-direction: column;
+
+    /*
+    gap agrega separación
+    entre cada botón.
+    */
+
+    gap: 10px;
+
+    /*
+    z-index ayuda a colocar
+    estos botones por encima
+    de otros elementos de la página.
+    */
+
+    z-index: 1000;
+}
+
+
+/* ===================================================== */
+/* DISEÑO DE CADA BOTÓN DE RED SOCIAL                    */
+/* ===================================================== */
+
+/*
+Chicos, aquí estamos creando
+la apariencia general de cada botón.
+*/
+
+.red-social {
+
+    /*
+    Definimos el tamaño del botón.
+    */
+
+    width: 45px;
+    height: 45px;
+
+
+    /*
+    border-radius: 50%
+    convierte nuestro botón
+    en un círculo.
+    */
+
+    border-radius: 50%;
+
+
+    /*
+    Utilizamos Flexbox para centrar
+    el icono dentro del círculo.
+    */
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    /*
+    Color de fondo inicial
+    de nuestros botones.
+    */
+
+    background-color: #212529;
+
+
+    /*
+    Color del icono.
+    */
+
+    color: white;
+
+
+    /*
+    Tamaño del icono.
+    */
+
+    font-size: 22px;
+
+
+    /*
+    Quitamos el subrayado
+    que normalmente tienen los enlaces.
+    */
+
+    text-decoration: none;
+
+
+    /*
+    transition permite que el movimiento
+    y el cambio de color sean suaves.
+    */
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* ===================================================== */
+/* HOVER DE LOS BOTONES DE REDES SOCIALES                */
+/* ===================================================== */
+
+/*
+Cuando pasamos el mouse
+sobre alguno de nuestros botones:
+
+1. Aumenta ligeramente de tamaño.
+2. Cambia de color.
+
+Chicos, aquí pueden modificar
+los valores y crear su propio estilo.
+*/
+
+.red-social:hover {
+
+    transform: scale(1.2);
+
+    background-color: #0d6efd;
+
+    color: white;
+}
+
+
+/* ===================================================== */
+/* COLORES DIFERENTES PARA CADA RED SOCIAL               */
+/* ===================================================== */
+
+/*
+Chicos, esto es opcional.
+
+nth-child permite seleccionar
+cada botón dependiendo de su posición.
+
+Nuestro primer botón es Instagram,
+el segundo Facebook, etc.
+*/
+
+
+/* Instagram */
+.red-social:nth-child(1):hover {
+    background-color: deeppink;
+}
+
+
+/* Facebook */
+.red-social:nth-child(2):hover {
+    background-color: royalblue;
+}
+
+
+/* X */
+.red-social:nth-child(3):hover {
+    background-color: black;
+}
+
+
+/* TikTok */
+.red-social:nth-child(4):hover {
+    background-color: black;
+}
+
+
+/* YouTube */
+.red-social:nth-child(5):hover {
+    background-color: red;
+}
+
+
+/* WhatsApp */
+.red-social:nth-child(6):hover {
+    background-color: green;
+}
+
+/* PRUEBA PARA COMPROBAR EL HOVER */
+.red-social:hover {
+    background-color: yellow !important;
+    color:black !important;
+    transform: scale(1.5) rotate(10deg);
+}
